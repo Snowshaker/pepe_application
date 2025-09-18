@@ -16,25 +16,34 @@ class Application(QWidget):
 
         QToolTip.setFont(QFont('SansSerif', 12))
 	
-        self.setToolTip('This is a <b>QWidget</b> widget')
+        self.setToolTip('This is an unused space')
 
-        btn = QPushButton('+1', self)
-        btn.setToolTip('This is a <b>QPushButton</b> widget')
-        btn.setGeometry(200, 150, 100, 30)
-        btn.move(50, 50)
+        plus_one = QPushButton('+=1', self)
+        plus_one.setToolTip('This is the main button')
+        plus_one.setGeometry(200, 150, 200, 60)
+        plus_one.move(50, 50)
+        plus_one.clicked.connect(self.plus_one_click)
 
-        self.setGeometry(300, 300, 800, 500)
+        plus_one.setIcon(QIcon('pepe.jpg'))
+    
+        div_by_two = QPushButton('//=2', self)
+        div_by_two.setToolTip('This is an additional button')
+        div_by_two.setGeometry(200, 150, 200, 60)
+        div_by_two.move(50, 120)
+        div_by_two.clicked.connect(self.div_by_two_click)
+        div_by_two.setIcon(QIcon('trollface.jpg'))
+
+        self.setGeometry(300, 300, 300, 300)
         self.setWindowTitle('The_counter')
-        
-        btn.clicked.connect( self.clickme)
-        btn.setIcon(QIcon('pepe.jpg'))
-
         self.show()
 
-    def clickme(self):
+    def plus_one_click(self):
         self.x += 1
         print(f'Now x = {self.x}')
-
+   
+    def div_by_two_click(self):
+        self.x //= 2
+        print(f'From that moment x = {self.x}')
 
 if __name__ == '__main__':
 
