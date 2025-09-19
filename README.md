@@ -1,3 +1,7 @@
-Установка библиотек (Linux):
+Установка:
 
-sudo python3 -m pip install pyqt5
+1) Скачайте python
+2) pip install -r requirements.txt
+
+Запуск:
+1) python app.py
