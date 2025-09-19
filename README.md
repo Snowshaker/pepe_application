@@ -1,7 +1,5 @@
 ## Установка:
-
-1) Скачайте python
-2) pip install -r requirements.txt
+sudo ./install.sh
 
 ## Запуск:
-1) python app.py
+sudo ./run.sh
